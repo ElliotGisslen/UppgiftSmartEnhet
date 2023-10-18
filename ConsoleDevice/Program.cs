@@ -24,7 +24,6 @@ async Task OnConfiguredAsync()
         await deviceManager.SetDirectMethodAsync("start", StartMethod);
         await deviceManager.SetDirectMethodAsync("stop", StopMethod);
         Console.WriteLine("Direct Method(s) Registered");
-        Console.WriteLine("Dahar");
 
         await deviceManager.SendMessageAsync("[\"testar\"]");
     }
@@ -35,6 +34,7 @@ async Task<MethodResponse> StartMethod(MethodRequest methodRequest, object userC
 {
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine($"{methodRequest.Name} triggered.");
+    Console.ForegroundColor = ConsoleColor.White;
 
     if (methodRequest.Name.ToLower() == "start")
     {
@@ -47,6 +47,7 @@ async Task<MethodResponse> StopMethod(MethodRequest methodRequest, object userCo
 {
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine($"{methodRequest.Name} triggered.");
+    Console.ForegroundColor = ConsoleColor.White;
     
 
     if (methodRequest.Name.ToLower() == "stop")
