@@ -1,5 +1,4 @@
-﻿using ConsoleDevice.Contexts;
-using DataAccess.Devices.Services;
+﻿using DataAccess.Devices.Services;
 using Microsoft.Azure.Devices.Client;
 using Microsoft.Azure.Devices.Shared;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +9,7 @@ var twinCollection = new TwinCollection();
 twinCollection["deviceType"] = "console";
 twinCollection["location"] = "virtual";
 
-var deviceManager = new DeviceManager(macAddress, "https://iotdevicefunctions.azurewebsites.net/api/devices?code=iuAxEhRfVJ2JfniSEy-Y0pQguaMhbWVEqeEEcm8UdYpQAzFungHWPw==");
+var deviceManager = new DeviceManager(macAddress, "https://iot-fa.azurewebsites.net/api/devices?code=oAGW5N59m_xbtbV5kKf0tEhJCGz8glWqHvPe-511Hdo8AzFunEnxSw==");
 deviceManager.IsConfiguredChanged += async () => await OnConfiguredAsync();
 
 async Task OnConfiguredAsync()
